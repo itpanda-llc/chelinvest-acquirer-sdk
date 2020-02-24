@@ -23,12 +23,12 @@ class Order
     protected const ORDER_ID = 'orderId';
 
     /**
-     * @var string|null URL web-запроса
+     * @var string URL web-запроса
      */
     public $url;
 
     /**
-     * @var array|null Параметры заказа
+     * @var array Параметры заказа
      */
     public $order = [];
 }

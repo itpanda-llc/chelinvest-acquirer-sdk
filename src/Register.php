@@ -65,7 +65,7 @@ class Register extends Order
     private const PRODUCT_CODE = 'code';
 
     /**
-     * @var array|null Параметры продуктов
+     * @var array Параметры продуктов
      */
     private $products = [];
 
@@ -124,19 +124,11 @@ class Register extends Order
     public function addProductList(array $productList): Register
     {
         foreach ($productList as $v) {
-            if ((!isset($v[0])) || (!isset($v[1]))) {
-                throw new ClientException(Message::PRODUCT_ERROR);
-            }
-
-            if ((!isset($v[2])) || (!isset($v[3]))) {
-                throw new ClientException(Message::PRODUCT_ERROR);
-            }
-
-            if ((!is_string($v[0])) || (!is_int($v[1]))) {
-                throw new ClientException(Message::PRODUCT_ERROR);
-            }
-
-            if ((!is_int($v[2])) || (!is_string($v[3]))) {
+            if ((!isset($v[0])) || (!isset($v[1]))
+                || (!isset($v[2])) || (!isset($v[3]))
+                || (!is_string($v[0])) || (!is_int($v[1]))
+                || (!is_int($v[2])) || (!is_string($v[3])))
+            {
                 throw new ClientException(Message::PRODUCT_ERROR);
             }
         }

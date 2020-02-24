@@ -11,8 +11,6 @@
 
 namespace Panda\Chelinvest\AcquirerSDK;
 
-use Panda\Yandex\TranslateSDK\Detect;
-
 /**
  * Class Acquirer Формирование и выполнение запроса в банк
  * @package Panda\Chelinvest\AcquirerSDK
@@ -35,7 +33,7 @@ class Acquirer extends Request
     private $order = [];
 
     /**
-     * Pilot constructor.
+     * Acquirer constructor.
      * @param string|null $userName Имя пользователя
      * @param string|null $password Пароль
      */
