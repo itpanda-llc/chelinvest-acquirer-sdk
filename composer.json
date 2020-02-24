@@ -20,5 +20,9 @@
         "psr-4": {
             "Panda\\Chelinvest\\AcquirerSDK\\": "src"
         }
+    },
+    "require": {
+        "ext-json": "*",
+        "ext-curl": "*"
     }
 }
