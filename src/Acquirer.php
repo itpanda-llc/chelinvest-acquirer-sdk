@@ -1,19 +1,16 @@
 <?php
 
 /**
- * Этот файл является частью репозитория
- * Panda/Chelinvest/AcquirerSDK.
- *
- * Для получения полной информации об авторских правах
- * и лицензии, пожалуйста, просмотрите файл LICENSE,
- * который был распространен с этим исходным кодом.
+ * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
+ * @link https://github.com/itpanda-llc
  */
 
 namespace Panda\Chelinvest\AcquirerSDK;
 
 /**
- * Class Acquirer Формирование и выполнение запроса в банк
+ * Class Acquirer
  * @package Panda\Chelinvest\AcquirerSDK
+ * Формирование и выполнение запроса в банк
  */
 class Acquirer extends Request
 {
@@ -72,7 +69,7 @@ class Acquirer extends Request
      */
     public function request(Order $order): string
     {
-        return parent::send($order->url,
+        return $this->send($order->url,
             http_build_query(array_merge($this->order,
                 $order->order)));
     }

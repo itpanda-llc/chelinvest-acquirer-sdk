@@ -1,19 +1,16 @@
 <?php
 
 /**
- * Этот файл является частью репозитория
- * Panda/Chelinvest/AcquirerSDK.
- *
- * Для получения полной информации об авторских правах
- * и лицензии, пожалуйста, просмотрите файл LICENSE,
- * который был распространен с этим исходным кодом.
+ * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
+ * @link https://github.com/itpanda-llc
  */
 
 namespace Panda\Chelinvest\AcquirerSDK;
 
 /**
- * Class Payment Формирование адреса страницы оплаты заказа
+ * Class Payment
  * @package Panda\Chelinvest\AcquirerSDK
+ * Формирование URL-адреса страницы оплаты заказа
  */
 class Payment extends Order
 {
@@ -33,7 +30,7 @@ class Payment extends Order
         $order[self::ORDER_ID] = $orderId;
         $order[self::MAIL] = $mail;
 
-        return sprintf('%s?%s',
+        return sprintf("%s?%s",
             URL::PAYMENT,
             http_build_query($order));
     }

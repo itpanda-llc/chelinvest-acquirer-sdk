@@ -3,9 +3,7 @@
     "description": "Library for integration with the processing center of PJSC Chelyabinvestbank",
     "type": "library",
     "keywords": [
-        "panda", "gorod74", "payment", "chelyabinsk", "order", "chelinvest",
-        "bank", "processing", "chelyabinvestbank", "acquirer", "php", "sdk",
-        "api", "rest-api", "http-client", "integration", "backend"
+        "panda", "gorod74", "chelinvest", "processing", "chelyabinvestbank", "acquirer"
     ],
     "homepage": "https://github.com/itpanda-llc/chelinvest-acquirer-php-sdk",
     "license": "MIT",

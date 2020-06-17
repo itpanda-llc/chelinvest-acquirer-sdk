@@ -1,19 +1,16 @@
 <?php
 
 /**
- * Этот файл является частью репозитория
- * Panda/Chelinvest/AcquirerSDK.
- *
- * Для получения полной информации об авторских правах
- * и лицензии, пожалуйста, просмотрите файл LICENSE,
- * который был распространен с этим исходным кодом.
+ * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
+ * @link https://github.com/itpanda-llc
  */
 
 namespace Panda\Chelinvest\AcquirerSDK;
 
 /**
- * Class Order Заказ
+ * Class Order
  * @package Panda\Chelinvest\AcquirerSDK
+ * Заказ
  */
 class Order
 {
@@ -23,7 +20,7 @@ class Order
     protected const ORDER_ID = 'orderId';
 
     /**
-     * @var string URL web-запроса
+     * @var string URL-адрес web-запроса
      */
     public $url;
 

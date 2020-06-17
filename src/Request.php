@@ -1,12 +1,8 @@
 <?php
 
 /**
- * Этот файл является частью репозитория
- * Panda/Chelinvest/AcquirerSDK.
- *
- * Для получения полной информации об авторских правах
- * и лицензии, пожалуйста, просмотрите файл LICENSE,
- * который был распространен с этим исходным кодом.
+ * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
+ * @link https://github.com/itpanda-llc
  */
 
 namespace Panda\Chelinvest\AcquirerSDK;
@@ -14,15 +10,16 @@ namespace Panda\Chelinvest\AcquirerSDK;
 use Panda\Chelinvest\AcquirerSDK\Exception\ClientException;
 
 /**
- * Class Request Web-запрос
+ * Class Request
  * @package Panda\Chelinvest\AcquirerSDK
+ * Web-запрос
  */
 class Request
 {
     /**
-     * @param string $url URL web-запроса
-     * @param string $data Параметры web-запроса
-     * @return string Результат web-запроса
+     * @param string $url URL-адрес
+     * @param string $data Параметры
+     * @return string Результат
      */
     protected function send(string $url, string $data): string
     {
@@ -33,13 +30,8 @@ class Request
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
-        $response = curl_exec($ch);
-
-        if ($response === false) {
-            throw new ClientException(sprintf('%s. Ошибка: %s',
-                Message::REQUEST_ERROR,
-                curl_error($ch)));
-        }
+        if (($response = curl_exec($ch)) === false)
+            throw new ClientException(curl_error($ch));
 
         curl_close($ch);
 

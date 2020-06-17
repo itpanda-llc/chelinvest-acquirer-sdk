@@ -1,26 +1,21 @@
 <?php
 
 /**
- * Этот файл является частью репозитория
- * Panda/Chelinvest/AcquirerSDK.
- *
- * Для получения полной информации об авторских правах
- * и лицензии, пожалуйста, просмотрите файл LICENSE,
- * который был распространен с этим исходным кодом.
+ * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
+ * @link https://github.com/itpanda-llc
  */
 
 namespace Panda\Chelinvest\AcquirerSDK;
 
-use Panda\Chelinvest\AcquirerSDK\Exception\ClientException;
-
 /**
- * Class Register Запрос регистрации заказа
+ * Class Register
  * @package Panda\Chelinvest\AcquirerSDK
+ * Запрос регистрации заказа
  */
 class Register extends Order
 {
     /**
-     * Наименование параметра "URL перехода после оплаты"
+     * Наименование параметра "URL-адрес перехода после оплаты"
      */
     private const RETURN_URL = 'returnUrl';
 
@@ -70,13 +65,13 @@ class Register extends Order
     private $products = [];
 
     /**
-     * @var string URL web-запроса
+     * @var string URL-адрес web-запроса
      */
     public $url = URL::REGISTER;
 
     /**
      * Register constructor.
-     * @param string $returnURL URL перехода после оплаты
+     * @param string $returnURL URL-адрес перехода после оплаты
      * @param string|null $orderNumber Номер заказа
      * @param string|null $orderDescription Описание заказа
      */
@@ -113,29 +108,6 @@ class Register extends Order
         $this->order[self::ORDER_AMOUNT] =
             $this->order[self::ORDER_AMOUNT] ?? 0;
         $this->order[self::ORDER_AMOUNT] += $count * $sum;
-
-        return $this;
-    }
-
-    /**
-     * @param array $productList Список параметров товаров
-     * @return Register
-     */
-    public function addProductList(array $productList): Register
-    {
-        foreach ($productList as $v) {
-            if ((!isset($v[0])) || (!isset($v[1]))
-                || (!isset($v[2])) || (!isset($v[3]))
-                || (!is_string($v[0])) || (!is_int($v[1]))
-                || (!is_int($v[2])) || (!is_string($v[3])))
-            {
-                throw new ClientException(Message::PRODUCT_ERROR);
-            }
-        }
-
-        foreach ($productList as $v) {
-            $this->addProduct($v[0], $v[1], $v[2], $v[3]);
-        }
 
         return $this;
     }
