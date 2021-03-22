@@ -2,30 +2,30 @@
 
 /**
  * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
- * @link https://github.com/itpanda-llc
+ * @link https://github.com/itpanda-llc/chelinvest-acquirer-php-sdk
  */
 
-namespace Panda\Chelinvest\AcquirerSDK;
+namespace Panda\Chelinvest\AcquirerSdk;
 
 /**
  * Class Order
- * @package Panda\Chelinvest\AcquirerSDK
- * Заказ
+ * @package Panda\Chelinvest\AcquirerSdk
+ * Заказ / Запрос
  */
 class Order
 {
     /**
-     * Наименование параметра "Номер заказа"
-     */
-    protected const ORDER_ID = 'orderId';
-
-    /**
-     * @var string URL-адрес web-запроса
+     * @var string|null URL-адрес
+     * @link https://mpi.chelinvest.ru/gorodUnified/documentation/inf/MPI/registerCommon
+     * @link https://mpi.chelinvest.ru/gorodUnified/documentation/inf/MPI/paymentPage
+     * @link https://mpi.chelinvest.ru/gorodUnified/documentation/inf/MPI/payment
+     * @link https://mpi.chelinvest.ru/gorodUnified/documentation/inf/MPI/getOrderStatusShort
+     * @link https://mpi.chelinvest.ru/gorodUnified/documentation/inf/MPI/getOrderStatus
      */
     public $url;
 
     /**
-     * @var array Параметры заказа
+     * @var array Параметры заказа/запроса
      */
     public $order = [];
 }

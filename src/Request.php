@@ -2,16 +2,16 @@
 
 /**
  * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
- * @link https://github.com/itpanda-llc
+ * @link https://github.com/itpanda-llc/chelinvest-acquirer-php-sdk
  */
 
-namespace Panda\Chelinvest\AcquirerSDK;
+declare(strict_types=1);
 
-use Panda\Chelinvest\AcquirerSDK\Exception\ClientException;
+namespace Panda\Chelinvest\AcquirerSdk;
 
 /**
  * Class Request
- * @package Panda\Chelinvest\AcquirerSDK
+ * @package Panda\Chelinvest\AcquirerSdk
  * Web-запрос
  */
 class Request
@@ -27,11 +27,12 @@ class Request
 
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
         if (($response = curl_exec($ch)) === false)
-            throw new ClientException(curl_error($ch));
+            throw new Exception\ClientException(curl_error($ch));
 
         curl_close($ch);
 
