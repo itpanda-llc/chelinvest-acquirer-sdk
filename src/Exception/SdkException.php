@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Файл из репозитория Chelinvest-Acquirer-PHP-SDK
- * @link https://github.com/itpanda-llc/chelinvest-acquirer-php-sdk
+ * Файл из репозитория Chelinvest-Acquirer-SDK
+ * @link https://github.com/itpanda-llc/chelinvest-acquirer-sdk
  */
 
 namespace Panda\Chelinvest\AcquirerSdk\Exception;

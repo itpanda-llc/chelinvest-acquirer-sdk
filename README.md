@@ -1,4 +1,4 @@
-# Chelinvest-Acquirer-PHP-SDK
+# Chelinvest-Acquirer-SDK
 
 Библиотека для интеграции с процессинговым центром [ПАО "Челябинвестбанк"](https://chelinvest.ru)
 

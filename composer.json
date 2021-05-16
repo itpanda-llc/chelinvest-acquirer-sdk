@@ -1,7 +1,7 @@
 {
     "name": "itpanda-llc/chelinvest-acquirer-sdk",
     "description": "Library for integration with processing center of PJSC Chelyabinvestbank",
-    "homepage": "https://github.com/itpanda-llc/chelinvest-acquirer-php-sdk",
+    "homepage": "https://github.com/itpanda-llc/chelinvest-acquirer-sdk",
     "license": "MIT",
     "authors": [
         {
